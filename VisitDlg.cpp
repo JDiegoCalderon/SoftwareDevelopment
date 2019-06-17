@@ -8,6 +8,7 @@ void VisitDlg::Window_Open(Win::Event& e)
 	wstring cmd;
 	try
 	{
+		//_______________________________________________________________Conection
 		//conn.OpenSession(DSN, USERNAME, PASSWORD); //Control Panel>Administrative Tools>Data Sources (ODBC)>Create dsn_myDatabase
 		conn.OpenSession(hWnd, CONNECTION_STRING);
 		conn.ExecuteSelect(L"SELECT userx_id, last_name FROM userx", 100, ddUser);

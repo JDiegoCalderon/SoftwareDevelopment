@@ -34,7 +34,7 @@ void UserDlg::Window_Open(Win::Event& e)
 
 void UserDlg::btOK_Click(Win::Event& e)
 {
-	//_____________________________________________________________ Validate
+	//_______________________________________________________________ Validate
 	wregex regextbxFirst_name(L"[A-ZÁÉÍÓÚÑ][a-záéíóúñ]*(\\s[A-ZÁÉÍÓÚÑ][a-záéíóúñ]*)?");
 	if (regex_match(tbxFirst_name.Text, regextbxFirst_name) == false)
 	{
@@ -68,6 +68,7 @@ void UserDlg::btOK_Click(Win::Event& e)
 	int rows = 0;
 	try
 	{
+		//__________________________________________________________________Conection
 		//conn.OpenSession(DSN, USERNAME, PASSWORD); //Control Panel>Administrative Tools>Data Sources (ODBC)>Create dsn_myDatabase
 		conn.OpenSession(hWnd, CONNECTION_STRING);
 		rows = conn.ExecuteNonQuery(sb.GetString());
